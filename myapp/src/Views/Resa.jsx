@@ -1,32 +1,21 @@
 import React from "react";
 
-function Result() {
-  return (
-    <>
-      <h1>Informations saisies</h1>
-      <p>Nom et Prenom :</p>
-      <p>Age :</p>
-      <p>Sexe :</p>
-      <p>Destination :</p>
-      <p>Restrictions Alimentaires :</p>
-    </>
-  );
-}
-
 class Resa extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      nom: { value: "" },
-      prenom: { value: "" },
-    };
+    this.state = {};
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
+  handleSubmit(event) {  
+    event.preventDefault();  
+  }  
+
   render() {
-    const { prenom, nom } = this.state;
-    const handleSubmit = () => {
-      console.log(prenom.current.value);
-      console.log(nom.current.value);
-    };
     return (
       <div>
         <form>
@@ -34,58 +23,88 @@ class Resa extends React.Component {
             <div>
               <h1>Formulaire de Reservation</h1>
               <input
-                value={this.state.prenom.value}
                 type="text"
+                name="prenom"
                 placeholder="Prenom"
+                value={this.state.prenom}
+                onChange={this.handleChange}
               />
               <input
-                value={this.state.nom.value}
                 type="text"
+                name="nom"
                 placeholder="Nom"
+                value={this.state.nom}
+                onChange={this.handleChange}
               />
-              <input type="text" placeholder="Age" />
+              <input
+                type="text"
+                pattern="[0-9]*"
+                name="age"
+                placeholder="Age"
+                value={this.state.age}
+                onChange={this.handleChange}
+              />
             </div>
             <div>
-              <input type="radio" value="homme" name="sex" />
+              <input
+                type="radio"
+                value="Homme"
+                name="sexe"
+                onChange={this.handleChange}
+              />
               <label for="homme">Homme</label>
-              <input type="radio" value="femme" name="sex" />
+              <input
+                type="radio"
+                value="Femme"
+                name="sexe"
+                onChange={this.handleChange}
+              />
               <label for="femme">Femme</label>
             </div>
             <div>
-              <select name="destination" id="destination-choix">
+              <select name="destination" onChange={this.handleChange}>
                 <option value="">--Choisissez une destination--</option>
-                <option value="paris">Paris</option>
-                <option value="marseille">Marseille</option>
-                <option value="hawaii">Hawaii</option>
-                <option value="japon">Japon</option>
-                <option value="canada">Canada</option>
-                <option value="miami">Miami</option>
+                <option value="Paris">Paris</option>
+                <option value="Marseille">Marseille</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Japon">Japon</option>
+                <option value="Canada">Canada</option>
+                <option value="Miami">Miami</option>
               </select>
             </div>
             <div>
               <input
+                name="restriction"
                 type="checkbox"
-                id="restrictionsNoix"
-                name="restrictionsNoix"
+                value="Sans Noix"
+                onChange={this.handleChange}
               />
               <label for="restrictions">Sans Noix</label>
               <input
+                name="restriction"
                 type="checkbox"
-                id="restrictionsLactose"
-                name="restrictionsLactose"
+                value="Sans Lactose"
+                onChange={this.handleChange}
               />
               <label for="restrictions">Sans Lactose</label>
               <input
+                name="restriction"
                 type="checkbox"
-                id="restrictionsVegetarien"
-                name="restrictionsVegetarien"
+                value="Vegetarien"
+                onChange={this.handleChange}
               />
               <label for="restrictions">Vegetarien</label>
             </div>
-            <input type="submit" value="Soumettre" onSubmit={handleSubmit} />
+            <input type="submit" value="Soumettre" />
           </label>
         </form>
-        <Result />
+        <h1>Informations saisies</h1>
+        <p>Prenom : {this.state.prenom}</p>
+        <p>Nom : {this.state.nom}</p>
+        <p>Age : {this.state.age}</p>
+        <p>Sexe : {this.state.sexe}</p>
+        <p>Destination : {this.state.destination}</p>
+        <p>Restrictions Alimentaires : {this.state.restriction}</p>
       </div>
     );
   }

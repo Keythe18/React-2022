@@ -4,7 +4,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="nav__links">
       <Link to="/">Acceuil</Link>
       <Link to="/resa">Reservations</Link>
     </nav>

@@ -18,23 +18,18 @@ export default class App extends React.Component {
         <Carousel>
           <div>
             <img src={img1} alt="" />
-            <p className="legend"></p>
           </div>
           <div>
             <img src={img2} alt="" />
-            <p className="legend"></p>
           </div>
           <div>
             <img src={img3} alt="" />
-            <p className="legend"></p>
           </div>
           <div>
             <img src={img4} alt="" />
-            <p className="legend"></p>
           </div>
           <div>
             <img src={img5} alt="" />
-            <p className="legend"></p>
           </div>
         </Carousel>
       </div>

@@ -1,9 +1,10 @@
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./Template/Navbar";
 import Resa from "./Views/Resa";
 import Homepage from "./Views/Homepage";
 import Footer from "./Template/Footer";
+import React from "react";
+import "./App.css"
 
 function App() {
     return (
