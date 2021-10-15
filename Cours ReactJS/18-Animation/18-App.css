@@ -1,0 +1,17 @@
+.nomTransition-enter {  
+  opacity: 0.02;  
+}  
+  
+.nomTransition-enter.nomTransition-enter-active {  
+  opacity: 2;  
+  transition: opacity 800ms ease-in;  
+}  
+  
+.nomTransition-exit {  
+  opacity: 2;  
+}  
+  
+.nomTransition-exit.nomTransition-exit-active {  
+  opacity: 0.02;  
+  transition: opacity 400ms ease-in;  
+}  

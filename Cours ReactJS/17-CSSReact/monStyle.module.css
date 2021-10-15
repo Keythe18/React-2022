@@ -1,0 +1,12 @@
+.pstyle {
+    background-color: grey;
+    color: darkcyan;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.dstyle {
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
